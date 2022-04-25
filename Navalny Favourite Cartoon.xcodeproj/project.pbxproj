@@ -19,6 +19,7 @@
 		ABB62F9D28174F96006081A3 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9C28174F96006081A3 /* ApiClient.swift */; };
 		ABB62F9F2817522A006081A3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9E2817522A006081A3 /* NetworkError.swift */; };
 		ABB62FA128175269006081A3 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA028175269006081A3 /* Method.swift */; };
+		ABB62FA4281753A3006081A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA3281753A3006081A3 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		ABB62F9C28174F96006081A3 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		ABB62F9E2817522A006081A3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		ABB62FA028175269006081A3 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		ABB62FA3281753A3006081A3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				ABB62F8128174C5A006081A3 /* AppDelegate.swift */,
 				ABB62F8328174C5A006081A3 /* SceneDelegate.swift */,
+				ABB62FA3281753A3006081A3 /* ViewModel.swift */,
 				ABB62F8528174C5A006081A3 /* ViewController.swift */,
 				ABB62FA2281752EB006081A3 /* Networking */,
 				ABB62F9B28174D8A006081A3 /* Model */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB62FA4281753A3006081A3 /* ViewModel.swift in Sources */,
 				ABB62F9F2817522A006081A3 /* NetworkError.swift in Sources */,
 				ABB62F9D28174F96006081A3 /* ApiClient.swift in Sources */,
 				ABB62F8628174C5A006081A3 /* ViewController.swift in Sources */,
