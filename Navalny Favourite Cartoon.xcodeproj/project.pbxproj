@@ -13,6 +13,9 @@
 		ABB62F8928174C5A006081A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB62F8728174C5A006081A3 /* Main.storyboard */; };
 		ABB62F8B28174C5B006081A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB62F8A28174C5B006081A3 /* Assets.xcassets */; };
 		ABB62F8E28174C5B006081A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB62F8C28174C5B006081A3 /* LaunchScreen.storyboard */; };
+		ABB62F9628174D26006081A3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9528174D26006081A3 /* Character.swift */; };
+		ABB62F9828174D4B006081A3 /* CharacterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9728174D4B006081A3 /* CharacterPage.swift */; };
+		ABB62F9A28174D6B006081A3 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9928174D6B006081A3 /* PageInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		ABB62F8A28174C5B006081A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABB62F8D28174C5B006081A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABB62F8F28174C5B006081A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB62F9528174D26006081A3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		ABB62F9728174D4B006081A3 /* CharacterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPage.swift; sourceTree = "<group>"; };
+		ABB62F9928174D6B006081A3 /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +69,19 @@
 				ABB62F8A28174C5B006081A3 /* Assets.xcassets */,
 				ABB62F8C28174C5B006081A3 /* LaunchScreen.storyboard */,
 				ABB62F8F28174C5B006081A3 /* Info.plist */,
+				ABB62F9B28174D8A006081A3 /* Model */,
 			);
 			path = "Navalny Favourite Cartoon";
+			sourceTree = "<group>";
+		};
+		ABB62F9B28174D8A006081A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABB62F9528174D26006081A3 /* Character.swift */,
+				ABB62F9728174D4B006081A3 /* CharacterPage.swift */,
+				ABB62F9928174D6B006081A3 /* PageInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +157,10 @@
 			files = (
 				ABB62F8628174C5A006081A3 /* ViewController.swift in Sources */,
 				ABB62F8228174C5A006081A3 /* AppDelegate.swift in Sources */,
+				ABB62F9A28174D6B006081A3 /* PageInfo.swift in Sources */,
 				ABB62F8428174C5A006081A3 /* SceneDelegate.swift in Sources */,
+				ABB62F9828174D4B006081A3 /* CharacterPage.swift in Sources */,
+				ABB62F9628174D26006081A3 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
