@@ -16,6 +16,7 @@
 		ABB62F9628174D26006081A3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9528174D26006081A3 /* Character.swift */; };
 		ABB62F9828174D4B006081A3 /* CharacterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9728174D4B006081A3 /* CharacterPage.swift */; };
 		ABB62F9A28174D6B006081A3 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9928174D6B006081A3 /* PageInfo.swift */; };
+		ABB62F9D28174F96006081A3 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9C28174F96006081A3 /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		ABB62F9528174D26006081A3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		ABB62F9728174D4B006081A3 /* CharacterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPage.swift; sourceTree = "<group>"; };
 		ABB62F9928174D6B006081A3 /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
+		ABB62F9C28174F96006081A3 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				ABB62F8128174C5A006081A3 /* AppDelegate.swift */,
 				ABB62F8328174C5A006081A3 /* SceneDelegate.swift */,
 				ABB62F8528174C5A006081A3 /* ViewController.swift */,
+				ABB62F9C28174F96006081A3 /* ApiClient.swift */,
 				ABB62F8728174C5A006081A3 /* Main.storyboard */,
 				ABB62F8A28174C5B006081A3 /* Assets.xcassets */,
 				ABB62F8C28174C5B006081A3 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB62F9D28174F96006081A3 /* ApiClient.swift in Sources */,
 				ABB62F8628174C5A006081A3 /* ViewController.swift in Sources */,
 				ABB62F8228174C5A006081A3 /* AppDelegate.swift in Sources */,
 				ABB62F9A28174D6B006081A3 /* PageInfo.swift in Sources */,
