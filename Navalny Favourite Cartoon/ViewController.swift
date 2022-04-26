@@ -15,6 +15,12 @@ class ViewController: UIViewController {
     
     var subscriptions: Set<AnyCancellable> = []
     private var viewModel: ViewModel?
+    let timerNumber = Timer
+        .publish(every: 3.0, on: .main, in: .common)
+        .autoconnect()
+        .scan(0) { counter, _ in counter + 1 }
+        .eraseToAnyPublisher()
+    // TODO: stop it
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +28,7 @@ class ViewController: UIViewController {
         let inputNumber = inputTextFiel.publisher(for: \.text).compactMap { $0.flatMap(Int.init) }.eraseToAnyPublisher()
         
         viewModel = ViewModel(apiClient: APIClient(),
-                              inputIdentifiersPublisher: inputNumber)
+                              inputIdentifiersPublisher: timerNumber)
         
         viewModel?.character
             .map { $0.description }
