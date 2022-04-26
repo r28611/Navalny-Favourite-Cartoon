@@ -20,6 +20,7 @@
 		ABB62F9F2817522A006081A3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9E2817522A006081A3 /* NetworkError.swift */; };
 		ABB62FA128175269006081A3 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA028175269006081A3 /* Method.swift */; };
 		ABB62FA4281753A3006081A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA3281753A3006081A3 /* ViewModel.swift */; };
+		ABB62FA628181191006081A3 /* + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA528181191006081A3 /* + UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		ABB62F9E2817522A006081A3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		ABB62FA028175269006081A3 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		ABB62FA3281753A3006081A3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ABB62FA528181191006081A3 /* + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIImageView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				ABB62F9C28174F96006081A3 /* ApiClient.swift */,
+				ABB62FA528181191006081A3 /* + UIImageView.swift */,
 				ABB62FA028175269006081A3 /* Method.swift */,
 				ABB62F9E2817522A006081A3 /* NetworkError.swift */,
 			);
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABB62FA4281753A3006081A3 /* ViewModel.swift in Sources */,
+				ABB62FA628181191006081A3 /* + UIImageView.swift in Sources */,
 				ABB62F9F2817522A006081A3 /* NetworkError.swift in Sources */,
 				ABB62F9D28174F96006081A3 /* ApiClient.swift in Sources */,
 				ABB62F8628174C5A006081A3 /* ViewController.swift in Sources */,

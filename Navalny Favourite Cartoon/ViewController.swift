@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var inputTextFiel: UITextField!
+    @IBOutlet var imageView: UIImageView!
     
     var subscriptions: Set<AnyCancellable> = []
     private var viewModel: ViewModel?
@@ -31,10 +32,14 @@ class ViewController: UIViewController {
                               inputIdentifiersPublisher: timerNumber)
         
         viewModel?.character
-            .map { $0.description }
-            .catch { _ in Empty<String, Never>()}
+            .map { $0 }
+            .catch { _ in Empty<Character, Never>()}
             .receive(on: RunLoop.main)
-            .assign(to: \.text!, on: textLabel)
+            .sink(receiveCompletion: { print($0) },
+                  receiveValue: { [weak self] character in
+                self?.imageView.downloaded(from: character.image)
+                self?.textLabel.text = character.description
+            })
             .store(in: &subscriptions)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(resign))
