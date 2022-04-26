@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQw-Fa-rUU">
-                                <rect key="frame" x="20.5" y="453" width="373" height="409"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQw-Fa-rUU">
+                                <rect key="frame" x="20.5" y="535" width="373" height="327"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-Jv-AAb">
-                                <rect key="frame" x="132" y="253" width="150" height="50"/>
+                                <rect key="frame" x="132" y="94" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="MQd-Of-AaA"/>
                                     <constraint firstAttribute="height" constant="50" id="ysC-wK-u8e"/>
@@ -36,11 +36,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6cn-Jv-AAb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bxU-Du-4Kc"/>
-                            <constraint firstItem="ZQw-Fa-rUU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dN2-en-yhK"/>
+                            <constraint firstItem="ZQw-Fa-rUU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dN2-en-yhK"/>
                             <constraint firstItem="ZQw-Fa-rUU" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9" id="dz5-wL-J5v"/>
                             <constraint firstItem="ZQw-Fa-rUU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="np4-v8-tTm"/>
-                            <constraint firstItem="ZQw-Fa-rUU" firstAttribute="top" secondItem="6cn-Jv-AAb" secondAttribute="bottom" constant="150" id="qy5-VE-weJ"/>
-                            <constraint firstItem="ZQw-Fa-rUU" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="rjw-Tz-NhQ"/>
+                            <constraint firstItem="6cn-Jv-AAb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="oM3-Sq-nFe"/>
+                            <constraint firstItem="ZQw-Fa-rUU" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="rjw-Tz-NhQ"/>
                         </constraints>
                     </view>
                     <connections>

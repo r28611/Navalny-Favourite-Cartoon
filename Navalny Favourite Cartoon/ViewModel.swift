@@ -12,13 +12,11 @@ class ViewModel {
     internal init(apiClient: APIClient,
                   inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
         self.apiClient = apiClient
-        self.inputIdentifiersPublisher = inputIdentifiersPublisher
+
+        let networking = inputIdentifiersPublisher.map { apiClient.character(id: $0)}.switchToLatest().share()
+        self.character = networking.eraseToAnyPublisher()
     }
     
     let apiClient: APIClient
-    let inputIdentifiersPublisher: AnyPublisher<Int, Never>
-    
-    func fetchCharactersWith(ids: [Int]) -> AnyPublisher<Character, NetworkError> {
-        apiClient.mergedCharacters(ids: ids)
-    }
+    let character: AnyPublisher<Character, NetworkError>
 }

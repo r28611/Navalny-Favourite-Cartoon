@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var inputTextFiel: UITextField!
-
+    
     var subscriptions: Set<AnyCancellable> = []
     private var viewModel: ViewModel?
     
@@ -24,16 +24,19 @@ class ViewController: UIViewController {
         viewModel = ViewModel(apiClient: APIClient(),
                               inputIdentifiersPublisher: inputNumber)
         
-        viewModel?.inputIdentifiersPublisher
-            .sink(receiveCompletion: { print($0) },
-                  receiveValue: { number in print(number) })
-            .store(in: &subscriptions)
-    
-        viewModel?.fetchCharactersWith(ids: [123, 77, 9])
+        viewModel?.character
             .map { $0.description }
             .catch { _ in Empty<String, Never>()}
             .receive(on: RunLoop.main)
             .assign(to: \.text!, on: textLabel)
-// or       .sink(receiveCompletion: { print($0) }, receiveValue: { [weak self] text in self?.textLabel.text = text })
-            .store(in: &subscriptions)}
+            .store(in: &subscriptions)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(resign))
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func resign() {
+        view.endEditing(true)
+        resignFirstResponder()
+    }
 }
