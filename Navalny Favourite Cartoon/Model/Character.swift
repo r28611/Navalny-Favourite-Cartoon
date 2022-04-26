@@ -13,7 +13,6 @@ public struct Character: Codable, CustomStringConvertible {
         Name: \(name)
         Status: \(status)
         Species: \(species)
-        Type: \(type)
         Gender: \(gender)
         Origin: \(origin.name)
 """

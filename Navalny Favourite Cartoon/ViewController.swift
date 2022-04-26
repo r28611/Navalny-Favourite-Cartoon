@@ -12,9 +12,16 @@ class ViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var inputTextFiel: UITextField!
+    @IBOutlet var imageView: UIImageView!
     
     var subscriptions: Set<AnyCancellable> = []
     private var viewModel: ViewModel?
+    let timerNumber = Timer
+        .publish(every: 3.0, on: .main, in: .common)
+        .autoconnect()
+        .scan(0) { counter, _ in counter + 1 }
+        .eraseToAnyPublisher()
+    // TODO: stop it
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +29,17 @@ class ViewController: UIViewController {
         let inputNumber = inputTextFiel.publisher(for: \.text).compactMap { $0.flatMap(Int.init) }.eraseToAnyPublisher()
         
         viewModel = ViewModel(apiClient: APIClient(),
-                              inputIdentifiersPublisher: inputNumber)
+                              inputIdentifiersPublisher: timerNumber)
         
         viewModel?.character
-            .map { $0.description }
-            .catch { _ in Empty<String, Never>()}
+            .map { $0 }
+            .catch { _ in Empty<Character, Never>()}
             .receive(on: RunLoop.main)
-            .assign(to: \.text!, on: textLabel)
+            .sink(receiveCompletion: { print($0) },
+                  receiveValue: { [weak self] character in
+                self?.imageView.downloaded(from: character.image)
+                self?.textLabel.text = character.description
+            })
             .store(in: &subscriptions)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(resign))
