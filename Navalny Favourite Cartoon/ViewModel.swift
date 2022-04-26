@@ -9,11 +9,14 @@ import Foundation
 import Combine
 
 class ViewModel {
-    internal init(apiClient: APIClient) {
+    internal init(apiClient: APIClient,
+                  inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
         self.apiClient = apiClient
+        self.inputIdentifiersPublisher = inputIdentifiersPublisher
     }
     
     let apiClient: APIClient
+    let inputIdentifiersPublisher: AnyPublisher<Int, Never>
     
     func fetchCharactersWith(ids: [Int]) -> AnyPublisher<Character, NetworkError> {
         apiClient.mergedCharacters(ids: ids)

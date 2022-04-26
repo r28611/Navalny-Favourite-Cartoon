@@ -11,6 +11,7 @@ import Combine
 class ViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
+    @IBOutlet var inputTextFiel: UITextField!
 
     var subscriptions: Set<AnyCancellable> = []
     private var viewModel: ViewModel?
@@ -18,8 +19,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = ViewModel(apiClient: APIClient())
+        let inputNumber = inputTextFiel.publisher(for: \.text).compactMap { $0.flatMap(Int.init) }.eraseToAnyPublisher()
         
+        viewModel = ViewModel(apiClient: APIClient(),
+                              inputIdentifiersPublisher: inputNumber)
+        
+        viewModel?.inputIdentifiersPublisher
+            .sink(receiveCompletion: { print($0) },
+                  receiveValue: { number in print(number) })
+            .store(in: &subscriptions)
+    
         viewModel?.fetchCharactersWith(ids: [123, 77, 9])
             .map { $0.description }
             .catch { _ in Empty<String, Never>()}
@@ -28,4 +37,3 @@ class ViewController: UIViewController {
 // or       .sink(receiveCompletion: { print($0) }, receiveValue: { [weak self] text in self?.textLabel.text = text })
             .store(in: &subscriptions)}
 }
-

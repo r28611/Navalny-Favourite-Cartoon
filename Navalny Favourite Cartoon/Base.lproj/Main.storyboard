@@ -22,17 +22,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-Jv-AAb">
+                                <rect key="frame" x="132" y="253" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="MQd-Of-AaA"/>
+                                    <constraint firstAttribute="height" constant="50" id="ysC-wK-u8e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6cn-Jv-AAb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bxU-Du-4Kc"/>
                             <constraint firstItem="ZQw-Fa-rUU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dN2-en-yhK"/>
                             <constraint firstItem="ZQw-Fa-rUU" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9" id="dz5-wL-J5v"/>
                             <constraint firstItem="ZQw-Fa-rUU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="np4-v8-tTm"/>
+                            <constraint firstItem="ZQw-Fa-rUU" firstAttribute="top" secondItem="6cn-Jv-AAb" secondAttribute="bottom" constant="150" id="qy5-VE-weJ"/>
                             <constraint firstItem="ZQw-Fa-rUU" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="rjw-Tz-NhQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputTextFiel" destination="6cn-Jv-AAb" id="qzS-dP-B5M"/>
                         <outlet property="textLabel" destination="ZQw-Fa-rUU" id="4Qt-Ub-xYf"/>
                     </connections>
                 </viewController>
