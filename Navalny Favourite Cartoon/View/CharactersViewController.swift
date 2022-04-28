@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CharactersViewController.swift
 //  Navalny Favourite Cartoon
 //
 //  Created by Margarita Novokhatskaia on 25/04/2022.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+class CharactersViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var inputTextFiel: UITextField!
