@@ -20,21 +20,23 @@ class ViewController: UIViewController {
         .publish(every: 3.0, on: .main, in: .common)
         .autoconnect()
         .scan(0) { counter, _ in counter + 1 }
-        .eraseToAnyPublisher()
     // TODO: stop it
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let inputNumber = inputTextFiel.publisher(for: \.text).compactMap { $0.flatMap(Int.init) }.eraseToAnyPublisher()
+        let inputNumber = inputTextFiel.publisher(for: \.text)
+            .compactMap { $0.flatMap(Int.init) }
+            .merge(with: timerNumber)
+            .eraseToAnyPublisher()
         
         viewModel = ViewModel(apiClient: APIClient(),
-                              inputIdentifiersPublisher: timerNumber)
+                              inputIdentifiersPublisher: inputNumber)
         
         viewModel?.character
             .map { $0 }
             .catch { _ in Empty<Character, Never>()}
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { print($0) },
                   receiveValue: { [weak self] character in
                 self?.imageView.downloaded(from: character.image)
