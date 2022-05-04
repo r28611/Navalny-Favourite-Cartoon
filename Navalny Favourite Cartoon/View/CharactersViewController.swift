@@ -34,8 +34,6 @@ class CharactersViewController: UIViewController {
                               inputIdentifiersPublisher: inputNumber)
         
         viewModel?.character
-            .map { $0 }
-            .catch { _ in Empty<Character, Never>()}
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { print($0) },
                   receiveValue: { [weak self] character in
