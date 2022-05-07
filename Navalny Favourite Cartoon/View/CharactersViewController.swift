@@ -11,7 +11,7 @@ import Combine
 class CharactersViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
-    @IBOutlet var inputTextFiel: UITextField!
+    @IBOutlet var inputTextFiel: UISearchBar!
     @IBOutlet var imageView: UIImageView!
     
     var subscriptions: Set<AnyCancellable> = []
@@ -25,7 +25,7 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let inputNumber = inputTextFiel.publisher(for: \.text)
+        let inputNumber = inputTextFiel.searchTextField.publisher(for: \.text)
             .compactMap { $0.flatMap(Int.init) }
             .merge(with: timerNumber)
             .eraseToAnyPublisher()
