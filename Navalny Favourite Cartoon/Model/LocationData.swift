@@ -1,5 +1,5 @@
 //
-//  Location.swift
+//  LocationData.swift
 //  Navalny Favourite Cartoon
 //
 //  Created by Margarita Novokhatskaia on 28/04/2022.

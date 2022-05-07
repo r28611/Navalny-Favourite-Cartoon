@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="84" id="B5Y-Gq-wtH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="84" id="B5Y-Gq-wtH" customClass="LocationCell" customModule="Navalny_Favourite_Cartoon" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B5Y-Gq-wtH" id="m6f-Hb-Ye0">
@@ -78,17 +78,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KlC-0z-46a">
-                                            <rect key="frame" x="32" y="17.5" width="41.5" height="49"/>
+                                            <rect key="frame" x="32" y="19" width="41.5" height="46"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-9H-3yl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="5bH-mf-2gX"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J68-iv-GHS">
-                                                    <rect key="frame" x="0.0" y="28.5" width="41.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="30" width="41.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -96,10 +99,15 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="KlC-0z-46a" firstAttribute="centerY" secondItem="m6f-Hb-Ye0" secondAttribute="centerY" id="lR8-I8-Wdu"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KlC-0z-46a" secondAttribute="bottom" constant="8" id="11J-g8-SHE"/>
+                                        <constraint firstItem="KlC-0z-46a" firstAttribute="top" secondItem="m6f-Hb-Ye0" secondAttribute="topMargin" constant="8" id="OKH-1z-sDW"/>
                                         <constraint firstItem="KlC-0z-46a" firstAttribute="leading" secondItem="m6f-Hb-Ye0" secondAttribute="leading" constant="32" id="uhR-xJ-E4V"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="BV4-9H-3yl" id="yd8-8X-8Zm"/>
+                                    <outlet property="typeLabel" destination="J68-iv-GHS" id="Bxa-vz-Cpl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
