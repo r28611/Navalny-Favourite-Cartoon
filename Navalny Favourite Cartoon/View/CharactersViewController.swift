@@ -15,7 +15,7 @@ class CharactersViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     var subscriptions: Set<AnyCancellable> = []
-    private var viewModel: ViewModel?
+    private var viewModel: CharacterViewModel?
     let timerNumber = Timer
         .publish(every: 3.0, on: .main, in: .common)
         .autoconnect()
@@ -30,7 +30,7 @@ class CharactersViewController: UIViewController {
             .merge(with: timerNumber)
             .eraseToAnyPublisher()
         
-        viewModel = ViewModel(apiClient: APIClient(),
+        viewModel = CharacterViewModel(apiClient: APIClient(),
                               inputIdentifiersPublisher: inputNumber)
         
         viewModel?.character

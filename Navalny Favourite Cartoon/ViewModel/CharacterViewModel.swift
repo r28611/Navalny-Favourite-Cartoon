@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  CharacterViewModel.swift
 //  Navalny Favourite Cartoon
 //
 //  Created by Margarita Novokhatskaia on 26/04/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class ViewModel {
+class CharacterViewModel {
     internal init(apiClient: APIClient,
                   inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
         self.apiClient = apiClient
