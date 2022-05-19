@@ -30,8 +30,7 @@ class CharactersViewController: UIViewController {
             .merge(with: timerNumber)
             .eraseToAnyPublisher()
         
-        viewModel = CharacterViewModel(apiClient: APIClient(),
-                              inputIdentifiersPublisher: inputNumber)
+        viewModel = CharacterViewModel(inputIdentifiersPublisher: inputNumber)
         
         viewModel?.character
             .receive(on: DispatchQueue.main)

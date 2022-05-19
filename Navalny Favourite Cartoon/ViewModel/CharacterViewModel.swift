@@ -9,14 +9,14 @@ import Foundation
 import Combine
 
 class CharacterViewModel {
-    internal init(apiClient: APIClient,
-                  inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
+    private let apiClient: APIClient
+    let character: AnyPublisher<Character, NetworkError>
+    
+    init(inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
+        let apiClient = APIClient()
         self.apiClient = apiClient
-
         let networking = inputIdentifiersPublisher.map { apiClient.character(id: $0)}.switchToLatest().share()
         self.character = networking.eraseToAnyPublisher()
     }
     
-    let apiClient: APIClient
-    let character: AnyPublisher<Character, NetworkError>
 }
