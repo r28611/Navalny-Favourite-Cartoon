@@ -21,6 +21,7 @@ class CharacterViewModel {
 
         self.character = inputIdentifiersPublisher
             .merge(with: timerNumber)
+            .throttle(for: .seconds(3.0), scheduler: DispatchQueue.global(), latest: false)
             .map { apiClient.character(id: $0)}
             .switchToLatest()
             .share()
