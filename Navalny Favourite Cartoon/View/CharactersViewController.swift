@@ -16,22 +16,15 @@ class CharactersViewController: UIViewController {
     
     var subscriptions: Set<AnyCancellable> = []
     private var viewModel: CharacterViewModel?
-    let timerNumber = Timer
-        .publish(every: 3.0, on: .main, in: .common)
-        .autoconnect()
-        .scan(0) { counter, _ in counter + 1 }
-    // TODO: stop it
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let inputNumber = inputTextFiel.searchTextField.publisher(for: \.text)
             .compactMap { $0.flatMap(Int.init) }
-            .merge(with: timerNumber)
             .eraseToAnyPublisher()
         
-        viewModel = CharacterViewModel(apiClient: APIClient(),
-                              inputIdentifiersPublisher: inputNumber)
+        viewModel = CharacterViewModel(inputIdentifiersPublisher: inputNumber)
         
         viewModel?.character
             .receive(on: DispatchQueue.main)

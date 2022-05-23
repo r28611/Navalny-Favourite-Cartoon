@@ -9,14 +9,23 @@ import Foundation
 import Combine
 
 class CharacterViewModel {
-    internal init(apiClient: APIClient,
-                  inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
-        self.apiClient = apiClient
+    let character: AnyPublisher<Character, NetworkError>
 
-        let networking = inputIdentifiersPublisher.map { apiClient.character(id: $0)}.switchToLatest().share()
-        self.character = networking.eraseToAnyPublisher()
+    init(inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
+        let apiClient = APIClient()
+        
+        let timerNumber = Timer
+            .publish(every: 3.0, on: .main, in: .common)
+            .autoconnect()
+            .scan(0) { counter, _ in counter + 1 }
+
+        self.character = inputIdentifiersPublisher
+            .merge(with: timerNumber)
+            .throttle(for: .seconds(3.0), scheduler: DispatchQueue.global(), latest: false)
+            .map { apiClient.character(id: $0)}
+            .switchToLatest()
+            .share()
+            .eraseToAnyPublisher()
     }
     
-    let apiClient: APIClient
-    let character: AnyPublisher<Character, NetworkError>
 }

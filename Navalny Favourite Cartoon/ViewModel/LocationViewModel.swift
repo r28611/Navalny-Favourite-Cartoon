@@ -9,14 +9,14 @@ import Foundation
 import Combine
 
 class LocationViewModel {
-    internal init(apiClient: APIClient,
-                  inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
-        self.apiClient = apiClient
-
-        let networking = inputIdentifiersPublisher.map { apiClient.character(id: $0)}.switchToLatest().share()
-        self.character = networking.eraseToAnyPublisher()
+    @Published var locations: AnyPublisher<[LocationData], NetworkError>
+    @Published var error: NetworkError? = nil
+    
+    init() {
+        self.locations = apiClient.locations()
     }
     
-    let apiClient: APIClient
-    let character: AnyPublisher<Character, NetworkError>
+    private var apiClient = APIClient()
+    private var currentPage: Int = 0
+    private var subscriptions: Set<AnyCancellable> = []
 }
