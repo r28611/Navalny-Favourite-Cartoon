@@ -39,7 +39,7 @@ struct APIClient {
          }
      }
     
-    func Locations() -> AnyPublisher<[LocationData], NetworkError> {
+    func locations() -> AnyPublisher<[LocationData], NetworkError> {
         return URLSession.shared
             .dataTaskPublisher(for: Method.locations.url) .receive(on: queue)
             .map(\.data)
