@@ -6,15 +6,26 @@
 //
 
 import UIKit
+import Combine
 
 private let reuseIdentifier = "Cell"
 
 final class LocationsTableViewController: UITableViewController {
     
+    var subscriptions: Set<AnyCancellable> = []
+    private var viewModel: LocationViewModel?
+    private var locations: [LocationData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView!.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        viewModel = LocationViewModel()
+        viewModel?.locations
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { print($0) },
+                  receiveValue: { [weak self] locations in
+                self?.locations = locations })
+            .store(in: &subscriptions)
     }
 
     // MARK: - Table view data source
@@ -24,14 +35,13 @@ final class LocationsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        locations.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? LocationCell else {
+            return UITableViewCell()
+        }
         return cell
     }
 }

@@ -38,4 +38,18 @@ struct APIClient {
                  .eraseToAnyPublisher()
          }
      }
+    
+    func locations() -> AnyPublisher<[LocationData], NetworkError> {
+        return URLSession.shared
+            .dataTaskPublisher(for: Method.locations.url) .receive(on: queue)
+            .map(\.data)
+            .decode(type: LocationPage.self, decoder: decoder)
+            .map { $0.results }
+            .mapError {
+                $0 is URLError
+                ? NetworkError.unreachableAddress(url: Method.locations.url)
+                : NetworkError.invalidResponse
+            }
+            .eraseToAnyPublisher()
+    }
  }

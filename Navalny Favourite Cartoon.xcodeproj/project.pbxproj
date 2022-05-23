@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AB2D3EB8281AFBE5003CE45B /* EpisodesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D3EB7281AFBE5003CE45B /* EpisodesCollectionViewController.swift */; };
-		AB2D3EBB281AFE65003CE45B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D3EBA281AFE65003CE45B /* Location.swift */; };
+		AB2D3EBB281AFE65003CE45B /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D3EBA281AFE65003CE45B /* LocationData.swift */; };
 		AB2D3EBF281B04B9003CE45B /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D3EBE281B04B9003CE45B /* Episode.swift */; };
+		ABB0992828270A9C00EB003A /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0992728270A9B00EB003A /* LocationCell.swift */; };
+		ABB0992A2827145100EB003A /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB099292827145100EB003A /* LocationViewModel.swift */; };
+		ABB0994B2831A3AA00EB003A /* Navalny_Favourite_CartoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0994A2831A3AA00EB003A /* Navalny_Favourite_CartoonTests.swift */; };
 		ABB62F8228174C5A006081A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F8128174C5A006081A3 /* AppDelegate.swift */; };
 		ABB62F8428174C5A006081A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F8328174C5A006081A3 /* SceneDelegate.swift */; };
 		ABB62F8628174C5A006081A3 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F8528174C5A006081A3 /* CharactersViewController.swift */; };
@@ -22,15 +25,29 @@
 		ABB62F9D28174F96006081A3 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9C28174F96006081A3 /* ApiClient.swift */; };
 		ABB62F9F2817522A006081A3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62F9E2817522A006081A3 /* NetworkError.swift */; };
 		ABB62FA128175269006081A3 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA028175269006081A3 /* Method.swift */; };
-		ABB62FA4281753A3006081A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA3281753A3006081A3 /* ViewModel.swift */; };
+		ABB62FA4281753A3006081A3 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA3281753A3006081A3 /* CharacterViewModel.swift */; };
 		ABB62FA628181191006081A3 /* + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA528181191006081A3 /* + UIImageView.swift */; };
 		ABB62FA8281AF7D7006081A3 /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB62FA7281AF7D7006081A3 /* LocationsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ABB0994C2831A3AA00EB003A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABB62F7628174C5A006081A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB62F7D28174C5A006081A3;
+			remoteInfo = "Navalny Favourite Cartoon";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AB2D3EB7281AFBE5003CE45B /* EpisodesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCollectionViewController.swift; sourceTree = "<group>"; };
-		AB2D3EBA281AFE65003CE45B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		AB2D3EBA281AFE65003CE45B /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		AB2D3EBE281B04B9003CE45B /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		ABB0992728270A9B00EB003A /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		ABB099292827145100EB003A /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		ABB099482831A3AA00EB003A /* Navalny Favourite CartoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Navalny Favourite CartoonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB0994A2831A3AA00EB003A /* Navalny_Favourite_CartoonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navalny_Favourite_CartoonTests.swift; sourceTree = "<group>"; };
 		ABB62F7E28174C5A006081A3 /* Navalny Favourite Cartoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navalny Favourite Cartoon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB62F8128174C5A006081A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB62F8328174C5A006081A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,12 +62,19 @@
 		ABB62F9C28174F96006081A3 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		ABB62F9E2817522A006081A3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		ABB62FA028175269006081A3 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
-		ABB62FA3281753A3006081A3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ABB62FA3281753A3006081A3 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		ABB62FA528181191006081A3 /* + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIImageView.swift"; sourceTree = "<group>"; };
 		ABB62FA7281AF7D7006081A3 /* LocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ABB099452831A3AA00EB003A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABB62F7B28174C5A006081A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,14 +91,33 @@
 				ABB62F8528174C5A006081A3 /* CharactersViewController.swift */,
 				ABB62FA7281AF7D7006081A3 /* LocationsTableViewController.swift */,
 				AB2D3EB7281AFBE5003CE45B /* EpisodesCollectionViewController.swift */,
+				ABB0992728270A9B00EB003A /* LocationCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ABB0992B28271BD000EB003A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABB62FA3281753A3006081A3 /* CharacterViewModel.swift */,
+				ABB099292827145100EB003A /* LocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABB099492831A3AA00EB003A /* Navalny Favourite CartoonTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABB0994A2831A3AA00EB003A /* Navalny_Favourite_CartoonTests.swift */,
+			);
+			path = "Navalny Favourite CartoonTests";
 			sourceTree = "<group>";
 		};
 		ABB62F7528174C5A006081A3 = {
 			isa = PBXGroup;
 			children = (
 				ABB62F8028174C5A006081A3 /* Navalny Favourite Cartoon */,
+				ABB099492831A3AA00EB003A /* Navalny Favourite CartoonTests */,
 				ABB62F7F28174C5A006081A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				ABB62F7E28174C5A006081A3 /* Navalny Favourite Cartoon.app */,
+				ABB099482831A3AA00EB003A /* Navalny Favourite CartoonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,7 +136,7 @@
 			children = (
 				ABB62F8128174C5A006081A3 /* AppDelegate.swift */,
 				ABB62F8328174C5A006081A3 /* SceneDelegate.swift */,
-				ABB62FA3281753A3006081A3 /* ViewModel.swift */,
+				ABB0992B28271BD000EB003A /* ViewModel */,
 				AB2D3EB9281AFBF7003CE45B /* View */,
 				ABB62FA2281752EB006081A3 /* Networking */,
 				ABB62F9B28174D8A006081A3 /* Model */,
@@ -109,7 +153,7 @@
 			children = (
 				ABB62F9528174D26006081A3 /* Character.swift */,
 				AB2D3EBE281B04B9003CE45B /* Episode.swift */,
-				AB2D3EBA281AFE65003CE45B /* Location.swift */,
+				AB2D3EBA281AFE65003CE45B /* LocationData.swift */,
 				ABB62F9728174D4B006081A3 /* CharacterPage.swift */,
 				ABB62F9928174D6B006081A3 /* PageInfo.swift */,
 			);
@@ -130,6 +174,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ABB099472831A3AA00EB003A /* Navalny Favourite CartoonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABB099502831A3AA00EB003A /* Build configuration list for PBXNativeTarget "Navalny Favourite CartoonTests" */;
+			buildPhases = (
+				ABB099442831A3AA00EB003A /* Sources */,
+				ABB099452831A3AA00EB003A /* Frameworks */,
+				ABB099462831A3AA00EB003A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABB0994D2831A3AA00EB003A /* PBXTargetDependency */,
+			);
+			name = "Navalny Favourite CartoonTests";
+			productName = "Navalny Favourite CartoonTests";
+			productReference = ABB099482831A3AA00EB003A /* Navalny Favourite CartoonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ABB62F7D28174C5A006081A3 /* Navalny Favourite Cartoon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABB62F9228174C5B006081A3 /* Build configuration list for PBXNativeTarget "Navalny Favourite Cartoon" */;
@@ -157,6 +219,10 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					ABB099472831A3AA00EB003A = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = ABB62F7D28174C5A006081A3;
+					};
 					ABB62F7D28174C5A006081A3 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -176,11 +242,19 @@
 			projectRoot = "";
 			targets = (
 				ABB62F7D28174C5A006081A3 /* Navalny Favourite Cartoon */,
+				ABB099472831A3AA00EB003A /* Navalny Favourite CartoonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ABB099462831A3AA00EB003A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABB62F7C28174C5A006081A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,17 +268,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ABB099442831A3AA00EB003A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB0994B2831A3AA00EB003A /* Navalny_Favourite_CartoonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABB62F7A28174C5A006081A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABB62FA4281753A3006081A3 /* ViewModel.swift in Sources */,
+				ABB62FA4281753A3006081A3 /* CharacterViewModel.swift in Sources */,
 				AB2D3EB8281AFBE5003CE45B /* EpisodesCollectionViewController.swift in Sources */,
 				ABB62FA628181191006081A3 /* + UIImageView.swift in Sources */,
 				ABB62F9F2817522A006081A3 /* NetworkError.swift in Sources */,
 				ABB62F9D28174F96006081A3 /* ApiClient.swift in Sources */,
 				ABB62F8628174C5A006081A3 /* CharactersViewController.swift in Sources */,
-				AB2D3EBB281AFE65003CE45B /* Location.swift in Sources */,
+				ABB0992828270A9C00EB003A /* LocationCell.swift in Sources */,
+				AB2D3EBB281AFE65003CE45B /* LocationData.swift in Sources */,
+				ABB0992A2827145100EB003A /* LocationViewModel.swift in Sources */,
 				ABB62F8228174C5A006081A3 /* AppDelegate.swift in Sources */,
 				ABB62F9A28174D6B006081A3 /* PageInfo.swift in Sources */,
 				ABB62F8428174C5A006081A3 /* SceneDelegate.swift in Sources */,
@@ -217,6 +301,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABB0994D2831A3AA00EB003A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABB62F7D28174C5A006081A3 /* Navalny Favourite Cartoon */;
+			targetProxy = ABB0994C2831A3AA00EB003A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ABB62F8728174C5A006081A3 /* Main.storyboard */ = {
@@ -238,6 +330,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ABB0994E2831A3AA00EB003A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93LWHTP5BH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "rs.newhome.Navalny-Favourite-CartoonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navalny Favourite Cartoon.app/Navalny Favourite Cartoon";
+			};
+			name = Debug;
+		};
+		ABB0994F2831A3AA00EB003A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93LWHTP5BH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "rs.newhome.Navalny-Favourite-CartoonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navalny Favourite Cartoon.app/Navalny Favourite Cartoon";
+			};
+			name = Release;
+		};
 		ABB62F9028174C5B006081A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,6 +539,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ABB099502831A3AA00EB003A /* Build configuration list for PBXNativeTarget "Navalny Favourite CartoonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABB0994E2831A3AA00EB003A /* Debug */,
+				ABB0994F2831A3AA00EB003A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ABB62F7928174C5A006081A3 /* Build configuration list for PBXProject "Navalny Favourite Cartoon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
