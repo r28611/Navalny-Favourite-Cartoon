@@ -6,30 +6,63 @@
 //
 
 import XCTest
+import Combine
+@testable import Navalny_Favourite_Cartoon
 
 class Navalny_Favourite_CartoonTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let input = PassthroughSubject<Int, Never>()
+    var testViewModel: CharactersViewModelMock!
+    var subscriptions = Set<AnyCancellable>()
+    
+    override func setUp() {
+        let publisher = input.eraseToAnyPublisher()
+        testViewModel = CharactersViewModelMock(inputIdentifiersPublisher: publisher)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown(){
+        subscriptions = []
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testCharacterViewModelExample() throws {
+        // Given
+        let expected = "Rick Sanchez"
+        var result = ""
+        let expectation = self.expectation(description: "Characters")
+        
+        testViewModel.character
+            .sink(receiveCompletion: { print($0)},
+                  receiveValue: {
+                result = $0.name
+            })
+            .store(in: &subscriptions)
+        
+        // When
+        input.send(1)
+        
+        testViewModel.testFetchCharacters {
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        // Then
+        XCTAssert(
+            result == expected,
+            "Wrong character. Expected: \(expected), result: \(result)"
+        )
     }
-
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
             // Put the code you want to measure the time of here.
         }
     }
+}
 
+class CharactersViewModelMock: CharacterViewModel {
+    
+    func testFetchCharacters(_ completion: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion() }
+    }
 }
