@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 class CharacterViewModel {
-    let character: AnyPublisher<Character, NetworkError>
+    let character: AnyPublisher<CharacterPage, NetworkError>
 
-    init(inputIdentifiersPublisher: AnyPublisher<Int, Never>) {
+    init(inputIdentifiersPublisher: AnyPublisher<String, Never>) {
         let apiClient = APIClient()
         
         let timerNumber = Timer
@@ -20,11 +20,11 @@ class CharacterViewModel {
             .scan(0) { counter, _ in counter + 1 }
 
         self.character = inputIdentifiersPublisher
-            .merge(with: timerNumber)
-            .throttle(for: .seconds(3.0), scheduler: DispatchQueue.global(), latest: false)
-            .map { apiClient.character(id: $0)}
+//            .merge(with: timerNumber)
+//            .throttle(for: .seconds(3.0), scheduler: DispatchQueue.global(), latest: false)
+            .map { apiClient.character(name: $0) }
             .switchToLatest()
-            .share()
+//            .share()
             .eraseToAnyPublisher()
     }
     

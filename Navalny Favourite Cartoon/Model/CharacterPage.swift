@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct LocationPage: Codable {
+public struct CharacterPage: Codable {
     public var info: PageInfo
-    public var results: [LocationData]
-    public init(info: PageInfo, results: [LocationData]) {
+    public var results: [Character]
+    public init(info: PageInfo, results: [Character]) {
         self.info = info
         self.results = results
     }

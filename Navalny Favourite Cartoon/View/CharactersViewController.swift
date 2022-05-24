@@ -21,7 +21,7 @@ class CharactersViewController: UIViewController {
         super.viewDidLoad()
         
         let inputNumber = inputTextFiel.searchTextField.publisher(for: \.text)
-            .compactMap { $0.flatMap(Int.init) }
+            .compactMap { $0 }
             .eraseToAnyPublisher()
         
         viewModel = CharacterViewModel(inputIdentifiersPublisher: inputNumber)
@@ -30,8 +30,9 @@ class CharactersViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { print($0) },
                   receiveValue: { [weak self] character in
-                self?.imageView.downloaded(from: character.image)
-                self?.textLabel.text = character.description
+//                self?.imageView.downloaded(from: character.image)
+//                self?.textLabel.text = character.description
+                print(character)
             })
             .store(in: &subscriptions)
         

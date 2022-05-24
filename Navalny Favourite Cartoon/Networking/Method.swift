@@ -10,14 +10,14 @@ import Foundation
 enum Method {
     static let baseURL = URL(string: "https://rickandmortyapi.com/api/")!
 
-    case character(Int)
+    case character(String)
     case locations
     case episode(Int)
 
     var url: URL {
         switch self {
-        case .character(let id):
-            return Method.baseURL.appendingPathComponent("character/\(id)")
+        case .character(let name):
+            return Method.baseURL.appendingPathComponent("character?name\(name)")
         case .locations:
             return Method.baseURL.appendingPathComponent("location/")
         case .episode(let id):
